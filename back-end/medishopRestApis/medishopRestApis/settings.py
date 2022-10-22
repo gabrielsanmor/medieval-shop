@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     #Configurando cors para rodar aplicação no mesmo servidor
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware'
+    'django.middleware.common.CommonMiddleware',
     
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -93,6 +93,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+REST_FRAMEWORK ={
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.CursorPagination'
 }
 
 
