@@ -37,10 +37,10 @@ class Cart(models.Model):
     user = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.user +" Criado em" + self.criado_em
+        return self.user.nome 
     
 class CartItem(models.Model):
     
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    quantidade = models.PositiveIntegerField()
+    quantidade = models.PositiveIntegerField(null=True)
     cart = models.ForeignKey(Cart, related_name='itens_cart',on_delete=models.CASCADE)
