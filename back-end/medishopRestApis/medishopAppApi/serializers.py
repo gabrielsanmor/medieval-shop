@@ -25,6 +25,11 @@ class UserSerializer(serializers.ModelSerializer):
         model = Usuario
         fields = ('id','user','nome','cpf')
 
+class UserSerializerPost(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = ('id','user','senha','nome','cpf')
+
 class CartItemSerializer(serializers.ModelSerializer):
     item = ItemSerializer()
     class Meta:
@@ -32,7 +37,7 @@ class CartItemSerializer(serializers.ModelSerializer):
         fields = ('id','item','quantidade')
 
 class CartSerializer(serializers.ModelSerializer):
-    itens_cart = CartItem()
+    itens_cart = CartItemSerializer(many=True)
     class Meta:
         model = Cart
         fields = ('id','criado_em','user','itens_cart')
