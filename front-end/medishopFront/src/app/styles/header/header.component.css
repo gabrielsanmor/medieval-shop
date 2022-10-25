@@ -1,0 +1,42 @@
+.toolbar-company{
+  height: 50px;
+  padding: 20px;
+  background-color: white;
+  color: #1f1f1f;
+}
+mat-form-field{
+  height: 10px;
+}
+
+img{
+  scale: inherit;
+  height: 30px;
+}
+
+.toolbar-categories{
+  font-family: Roboto Thin, sans-serif;
+  color: white;
+  background-color: #032641;
+  font-size: 15px;
+
+}
+
+.button-inscricao{
+  color: #3bf169;
+  border-color: #3bf169;
+  border-radius: 30px;
+  background-color: transparent;
+  width: 150px;
+  padding: 4px;
+  margin-left: 10px;
+  text-decoration: none;
+
+}
+
+.button-inscricao:hover{
+  background-color: #3bf169;
+  color: #032641;
+  border: none;
+  transition: 0.4s;
+  text-decoration: none;
+}
