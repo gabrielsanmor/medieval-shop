@@ -80,16 +80,6 @@ class UserDetalheView(APIView):
         else:
             return Response({"message":"As senhas não coincidem"},status=status.HTTP_400_BAD_REQUEST)
 
-class CartAddView(APIView):
-        
-    def post(self, request,format=None):
-        item = Item.objects.get(id=request.data.get('item'))
-        cart = Cart.objects.get(user__id=request.data.get('user'))
-        cartItem,b=CartItem.objects.get_or_create(cart=cart,item=item)
-        cartItem.quantidade=request.data.get('quantidade')
-        cartItem.save()
-        return Response({"message":"Item adicionado com sucesso"},status=status.HTTP_200_OK)
-
 class UserCriaView(APIView):
     
     def test_item(self,user,cpf):
@@ -128,7 +118,16 @@ class CarrinhoListView(APIView):
         except: Usuario.DoesNotExist
         raise Http404
 
-    def post(self,request,format=None):
-        cart = self.get_item(request.data.get('id'))
+    def get(self,request,id,format=None):
+        cart = self.get_item(id)
         serializer = CartSerializer(cart,context={'request':request})
         return Response(serializer.data)
+
+    def put(self, request,id,format=None):
+        cart= Cart.objects.get(user=id)
+        cartItem,b=CartItem.objects.get_or_create(cart=cart,item=request.data.get('item'))
+        serializer = CartItemSerializer(cartItem,data=request.data)
+        if(serializer.is_valid()):
+            serializer.save()
+            return Response(serializer.data)
+        return Response({"message":"Algum problema aconteceu"},status=status.HTTP_400_BAD_REQUEST)
