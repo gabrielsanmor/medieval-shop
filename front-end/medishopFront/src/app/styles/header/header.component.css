@@ -1,6 +1,5 @@
 .toolbar-company{
   height: 50px;
-  padding: 20px;
   background-color: white;
   color: #1f1f1f;
 }
@@ -13,7 +12,8 @@ img{
   height: 30px;
 }
 
-.toolbar-categories{
+.toolbar-infos{
+  height: 50px;
   font-family: Roboto Thin, sans-serif;
   color: white;
   background-color: #032641;
