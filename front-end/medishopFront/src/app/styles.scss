@@ -1,0 +1,17 @@
+@use 'src/app/shared/styles/colors/colors';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  color: var(--text-color-hard);
+  font-weight: 400;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
