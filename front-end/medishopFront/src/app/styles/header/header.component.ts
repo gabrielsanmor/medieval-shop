@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HtmlUtils} from "../utils/mobile.version";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,9 @@ import {HtmlUtils} from "../utils/mobile.version";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     HeaderComponent.verifyIsMobile();
@@ -28,6 +31,10 @@ export class HeaderComponent implements OnInit {
         navBar.style.display = "block";
       }
     }
+  }
+
+  goToPainel(){
+    this.router.navigate(['painel']).then(r => r)
   }
 
   // close navBarMobile expanded aria

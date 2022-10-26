@@ -45,6 +45,8 @@
       <button mat-button>SERVIÇOS</button>
       <button mat-button>FALE CONOSCO</button>
 
+
+
   <form>
     <mat-form-field appearance="standard" class="mb-5">
       <mat-label>Buscar</mat-label>
@@ -54,6 +56,7 @@
   </form>
 
   <div class="demo-section mt-2">
+    <button mat-icon-button> <mat-icon>account_circle</mat-icon> </button>
     <button mat-icon-button><mat-icon matBadge="0">shopping_cart</mat-icon></button>
   </div>
 </div>
@@ -91,10 +94,13 @@
         <img src="assets/images/logo.png" alt="logo">
       </div>
     </div>
-    <button mat-icon-button>
-      <mat-icon>shopping_cart</mat-icon>
-      <span class="position-absolute mt-2 translate-middle badge rounded-pill bg-info">0
+<div class="d-flex justify-content-end">
+  <button mat-icon-button (click)="goToPainel()"> <mat-icon>account_circle</mat-icon> </button>
+  <button mat-icon-button>
+    <mat-icon>shopping_cart</mat-icon>
+    <span class="position-absolute mt-2 translate-middle badge rounded-pill bg-info">0
   </span>
-    </button>
+  </button>
+</div>
   </div>
 </section>

@@ -8,6 +8,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
 import {FormsModule} from "@angular/forms";
 import {MatBadgeModule} from "@angular/material/badge";
+import {PainelModule} from "../../components/painel/painel.module";
 
 
 
