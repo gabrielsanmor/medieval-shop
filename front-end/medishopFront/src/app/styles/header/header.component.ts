@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   // set NavBar type to device screen
   private static verifyIsMobile(): void {
     const navBar = document.getElementById('toolbar-desktop');
-    const navBarMobile = document.getElementById('navBarMobile');
+    const navBarMobile = document.getElementById('toolbar-mobile');
     if (navBar !== null && navBarMobile !== null){
       if (HtmlUtils.isMobileDevice()){
         navBar.style.display = "none";

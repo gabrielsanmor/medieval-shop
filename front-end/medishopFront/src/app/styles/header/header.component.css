@@ -11,6 +11,14 @@ mat-icon{
   color: #6e6e6e;
 }
 
+.cart{
+  text-decoration: none;
+}
+
+.menu{
+  color: #13b8be;
+}
+
 .button-inscricao{
   color: #3bf169;
   border-color: #3bf169;
