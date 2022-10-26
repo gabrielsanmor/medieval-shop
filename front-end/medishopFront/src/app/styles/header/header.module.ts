@@ -5,6 +5,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
+import {MatMenuModule} from "@angular/material/menu";
+import {FormsModule} from "@angular/forms";
+import {MatBadgeModule} from "@angular/material/badge";
 
 
 
@@ -20,7 +23,10 @@ import {MatInputModule} from "@angular/material/input";
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule,
+    FormsModule,
+    MatBadgeModule
   ]
 })
 export class HeaderModule { }

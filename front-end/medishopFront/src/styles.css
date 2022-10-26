@@ -13,5 +13,12 @@
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Roboto Slab', serif;
 }
+
+.bg-blue{
+  background: #032641 !important;
+  color: white !important;
+}
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, Arial, sans-serif; }
