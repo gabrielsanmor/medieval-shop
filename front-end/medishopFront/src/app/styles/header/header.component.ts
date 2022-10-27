@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Categoria } from 'src/app/models/categoria.model';
+import { CategoriaService } from 'src/app/services/categoria.service';
 import {HtmlUtils} from "../utils/mobile.version";
 
 @Component({
@@ -8,11 +10,26 @@ import {HtmlUtils} from "../utils/mobile.version";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  categorias?:Categoria[]
+
+  constructor(private catService:CategoriaService) { }
 
   ngOnInit(): void {
+    this.getAll()
     HeaderComponent.verifyIsMobile();
     window.addEventListener('resize', HeaderComponent.verifyIsMobile);
+  }
+
+  //Solicita categorias da api
+  getAll():void{
+    this.catService.getAll().subscribe(
+      {
+        next:(data) => {
+          this.categorias=data
+        },
+        error: (e) => { console.error(e) }
+      }
+    )
   }
 
   // set NavBar type to device screen
