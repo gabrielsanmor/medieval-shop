@@ -26,20 +26,9 @@
           CATEGORIAS
           <i class="bi bi-caret-down-fill"></i></button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <span>Beleza</span>
-            </button>
-            <button mat-menu-item>
-              <span>Cuidados Diários</span>
-            </button>
-            <button mat-menu-item>
-              <span>Dermocosméticos</span>
-            </button>
-            <button mat-menu-item>
-              <span>Medicamentos</span>
-            </button>
-            <button mat-menu-item>
-              <span>Saúde</span>
+            
+            <button mat-menu-item *ngFor="let categoria of categorias">
+              <span>{{categoria.nome}}</span>
             </button>
           </mat-menu>
       <button mat-button>SERVIÇOS</button>
