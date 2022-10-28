@@ -10,7 +10,7 @@ import {HtmlUtils} from "../utils/mobile.version";
 })
 export class HeaderComponent implements OnInit {
 
-  categorias?:Categoria[]
+  categoriasList?:Categoria[]
 
   constructor(private catService:CategoriaService) { }
 
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     this.catService.getAll().subscribe(
       {
         next:(data) => {
-          this.categorias=data
+          this.categoriasList=data
         },
         error: (e) => { console.error(e) }
       }

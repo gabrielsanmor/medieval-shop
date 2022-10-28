@@ -4,6 +4,7 @@ import { ItemMenuComponent } from './components/item-menu/item-menu.component'
 
 const routes: Routes = [
   {path:'',component:ItemMenuComponent},
+  {path:':categoria',component:ItemMenuComponent},
 ];
 
 @NgModule({
