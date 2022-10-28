@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
 
-  listCategorias: Categoria[] = []
+  categoriasList: Categoria[] = []
 
   constructor(private catService:CategoriaService,
               private router: Router) { }
@@ -27,8 +27,7 @@ export class HeaderComponent implements OnInit {
     this.catService.getAll().subscribe(
       {
         next:(data) => {
-          this.listCategorias=data
-          console.log(this.listCategorias)
+          this.categoriasList=data
         },
         error: (e) => { console.error(e) }
       }

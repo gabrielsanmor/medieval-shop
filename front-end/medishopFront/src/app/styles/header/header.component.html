@@ -26,8 +26,7 @@
           CATEGORIAS
           <i class="bi bi-caret-down-fill"></i></button>
           <mat-menu #menu="matMenu">
-=======
-            <a class="a-opcao"*ngFor="let categoria of categoriasList" routerLink="/{{categoria.nome}}">
+            <a class="a-opcao" *ngFor="let categoria of categoriasList" routerLink="/{{categoria.nome}}">
               <button mat-menu-item>
                 <span>{{categoria.nome}}</span>
               </button>
@@ -35,8 +34,6 @@
           </mat-menu>
       <button mat-button>SERVIÇOS</button>
       <button mat-button>FALE CONOSCO</button>
-
-
 
   <form>
     <mat-form-field appearance="standard" class="mb-5">

@@ -26,7 +26,7 @@ class ItemSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ('id','user','nome','cpf')
+        fields = ('id','user','nome','cpf','logradouro','bairro','cidade','estado')
 
 class UserSerializerPost(serializers.ModelSerializer):
     class Meta:

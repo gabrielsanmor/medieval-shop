@@ -4,4 +4,8 @@ export interface Usuario{
   senha?:string;
   nome?:string;
   cpf?:string;
+  logradouro?:string
+  bairro?:string;
+  cidade?:string;
+  estado?:string;
 }
