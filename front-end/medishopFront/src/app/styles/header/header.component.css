@@ -11,6 +11,10 @@ mat-icon{
   color: #6e6e6e;
 }
 
+.a-opcao{
+  text-decoration: none;
+}
+
 .cart{
   text-decoration: none;
 }
