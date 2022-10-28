@@ -9,21 +9,25 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HeaderModule} from "./styles/header/header.module";
 import { HomeComponent } from './components/home/home.component';
+import {SharedModule} from "./shared/shared.module";
+import {CardProdutosModule} from "./shared/card-produtos/card-produtos.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        FontAwesomeModule,
-        BrowserAnimationsModule,
-        HeaderModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    HeaderModule,
+    SharedModule,
+    CardProdutosModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
