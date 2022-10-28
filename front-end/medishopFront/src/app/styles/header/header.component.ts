@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'src/app/models/categoria.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import {HtmlUtils} from "../utils/mobile.version";
 
@@ -10,9 +11,11 @@ import {HtmlUtils} from "../utils/mobile.version";
 })
 export class HeaderComponent implements OnInit {
 
-  categorias?:Categoria[]
+  categoriasList?:Categoria[]
 
-  constructor(private catService:CategoriaService) { }
+  constructor(
+    private catService:CategoriaService,
+    public authService:AuthService) { }
 
   ngOnInit(): void {
     this.getAll()
@@ -25,7 +28,7 @@ export class HeaderComponent implements OnInit {
     this.catService.getAll().subscribe(
       {
         next:(data) => {
-          this.categorias=data
+          this.categoriasList=data
         },
         error: (e) => { console.error(e) }
       }
