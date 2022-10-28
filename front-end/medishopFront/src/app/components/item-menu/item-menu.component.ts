@@ -23,6 +23,7 @@ export class ItemMenuComponent implements OnInit {
       this.getItemCategoria(categoria)
     else
       this.getAllItems()
+    console.log(categoria)
   }
 
   getAllItems(): void{
