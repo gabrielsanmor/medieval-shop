@@ -17,9 +17,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.getAll().subscribe((res) => {
-      this.items = res;
-      console.log(res)
+    this.service.getAll().subscribe({
+      next: (data)=>{
+        this.items=data
+      },
+      error: (e) => {
+        console.log(e)
+      }
     })
   }
 
