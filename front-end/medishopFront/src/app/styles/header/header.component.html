@@ -64,23 +64,6 @@
 <!--                      <span *ngFor="let categoria of categorias">{{categoria}}</span>-->
                     </button>
                   </mat-menu>
-<!--        <mat-menu #menu="matMenu">-->
-<!--          <button mat-menu-item>-->
-<!--            <span>Beleza</span>-->
-<!--          </button>-->
-<!--          <button mat-menu-item>-->
-<!--            <span>Cuidados Diários</span>-->
-<!--          </button>-->
-<!--          <button mat-menu-item>-->
-<!--            <span>Dermocosméticos</span>-->
-<!--          </button>-->
-<!--          <button mat-menu-item>-->
-<!--            <span>Medicamentos</span>-->
-<!--          </button>-->
-<!--          <button mat-menu-item>-->
-<!--            <span>Saúde</span>-->
-<!--          </button>-->
-<!--        </mat-menu>-->
         <button mat-menu-item>SERVIÇOS</button>
         <button mat-menu-item>FALE CONOSCO</button>
       </mat-menu>
@@ -89,7 +72,7 @@
       </div>
     </div>
 <div class="d-flex justify-content-end">
-  <button mat-icon-button> <mat-icon>account_circle</mat-icon> </button>
+  <button mat-icon-button (click)="goToPainel()"> <mat-icon>account_circle</mat-icon> </button>
   <button mat-icon-button>
     <mat-icon>shopping_cart</mat-icon>
     <span class="position-absolute mt-2 translate-middle badge rounded-pill bg-info">0
