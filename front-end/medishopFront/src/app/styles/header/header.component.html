@@ -1,5 +1,5 @@
 <section id="toolbar-desktop">
-    <div class="bg-blue d-flex justify-content-between align-items-center p-2 flex-wrap">
+    <div *ngIf="authService.isLogged()" class="bg-blue d-flex justify-content-between align-items-center p-2 flex-wrap">
       <span class="ms-5">Inscreva-se agora para ganhar desconto a cada compra realizada online
       <button type="button" class="button-inscricao">Inscreva-se</button>
       </span>

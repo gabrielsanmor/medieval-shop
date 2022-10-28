@@ -19,7 +19,7 @@ export class ItemMenuComponent implements OnInit {
 
   ngOnInit(): void {
     const categoria = String(this.route.snapshot.paramMap.get('categoria'))
-    if(categoria!=null)
+    if(categoria!="null")
       this.getItemCategoria(categoria)
     else
       this.getAllItems()
