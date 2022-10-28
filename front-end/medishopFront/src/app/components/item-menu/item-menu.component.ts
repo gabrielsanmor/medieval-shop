@@ -15,7 +15,7 @@ export class ItemMenuComponent implements OnInit {
   constructor(
     private itemService:ItemService,
     private route:ActivatedRoute
-    ) { }
+  ){ }
 
   ngOnInit(): void {
     const categoria = String(this.route.snapshot.paramMap.get('categoria'))
@@ -23,7 +23,6 @@ export class ItemMenuComponent implements OnInit {
       this.getItemCategoria(categoria)
     else
       this.getAllItems()
-    console.log(categoria)
   }
 
   getAllItems(): void{
@@ -43,7 +42,8 @@ export class ItemMenuComponent implements OnInit {
         next: (data) => {
           this.itens = data
         },
-        error: (e) => console.error(e)      }
+        error: (e) => console.error(e)
+      }
     )
   }
 
