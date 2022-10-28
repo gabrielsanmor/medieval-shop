@@ -1,5 +1,5 @@
 <section id="toolbar-desktop">
-    <div *ngIf="authService.isLogged()" class="bg-blue d-flex justify-content-between align-items-center p-2 flex-wrap">
+    <div class="bg-blue d-flex justify-content-between align-items-center p-2 flex-wrap">
       <span class="ms-5">Inscreva-se agora para ganhar desconto a cada compra realizada online
       <button type="button" class="button-inscricao">Inscreva-se</button>
       </span>
@@ -26,14 +26,15 @@
           CATEGORIAS
           <i class="bi bi-caret-down-fill"></i></button>
           <mat-menu #menu="matMenu">
-            <a *ngFor="let categoria of categoriasList" routerLink="{{categoria.nome}}">
-              <button mat-menu-item>
-                <span>{{categoria.nome}}</span>
-              </button>
-            </a>
+
+            <button mat-menu-item *ngFor="let categoria of listCategorias">
+              <span>{{categoria.nome}}</span>
+            </button>
           </mat-menu>
       <button mat-button>SERVIÇOS</button>
       <button mat-button>FALE CONOSCO</button>
+
+
 
   <form>
     <mat-form-field appearance="standard" class="mb-5">
@@ -44,6 +45,7 @@
   </form>
 
   <div class="demo-section mt-2">
+    <button mat-icon-button> <mat-icon>account_circle</mat-icon> </button>
     <button mat-icon-button><mat-icon matBadge="0">shopping_cart</mat-icon></button>
   </div>
 </div>
@@ -57,23 +59,11 @@
         <button mat-menu-item>HOME</button>
         <button mat-menu-item>SOBRE</button>
         <button mat-menu-item [matMenuTriggerFor]="menu">CATEGORIAS </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <span>Beleza</span>
-          </button>
-          <button mat-menu-item>
-            <span>Cuidados Diários</span>
-          </button>
-          <button mat-menu-item>
-            <span>Dermocosméticos</span>
-          </button>
-          <button mat-menu-item>
-            <span>Medicamentos</span>
-          </button>
-          <button mat-menu-item>
-            <span>Saúde</span>
-          </button>
-        </mat-menu>
+        <mat-menu #menu="matMenu">-->
+                    <button mat-menu-item>
+<!--                      <span *ngFor="let categoria of categorias">{{categoria}}</span>-->
+                    </button>
+                  </mat-menu>
         <button mat-menu-item>SERVIÇOS</button>
         <button mat-menu-item>FALE CONOSCO</button>
       </mat-menu>
@@ -81,10 +71,13 @@
         <img src="assets/images/logo.png" alt="logo">
       </div>
     </div>
-    <button mat-icon-button>
-      <mat-icon>shopping_cart</mat-icon>
-      <span class="position-absolute mt-2 translate-middle badge rounded-pill bg-info">0
+<div class="d-flex justify-content-end">
+  <button mat-icon-button (click)="goToPainel()"> <mat-icon>account_circle</mat-icon> </button>
+  <button mat-icon-button>
+    <mat-icon>shopping_cart</mat-icon>
+    <span class="position-absolute mt-2 translate-middle badge rounded-pill bg-info">0
   </span>
-    </button>
+  </button>
+</div>
   </div>
 </section>

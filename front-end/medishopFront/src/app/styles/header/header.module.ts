@@ -9,6 +9,8 @@ import {MatMenuModule} from "@angular/material/menu";
 import {FormsModule} from "@angular/forms";
 import {MatBadgeModule} from "@angular/material/badge";
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import {PainelModule} from "../../components/painel/painel.module";
+import {HeaderRouting} from "./header.component.routing";
 
 
 
@@ -28,7 +30,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     MatMenuModule,
     FormsModule,
     MatBadgeModule,
-    AppRoutingModule
+    HeaderRouting
   ]
 })
 export class HeaderModule { }

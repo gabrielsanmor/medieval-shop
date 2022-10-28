@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'src/app/models/categoria.model';
-import { AuthService } from 'src/app/services/auth.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import {HtmlUtils} from "../utils/mobile.version";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -11,11 +11,10 @@ import {HtmlUtils} from "../utils/mobile.version";
 })
 export class HeaderComponent implements OnInit {
 
-  categoriasList?:Categoria[]
+  listCategorias: Categoria[] = []
 
-  constructor(
-    private catService:CategoriaService,
-    public authService:AuthService) { }
+  constructor(private catService:CategoriaService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getAll()
@@ -28,7 +27,8 @@ export class HeaderComponent implements OnInit {
     this.catService.getAll().subscribe(
       {
         next:(data) => {
-          this.categoriasList=data
+          this.listCategorias=data
+          console.log(this.listCategorias)
         },
         error: (e) => { console.error(e) }
       }
@@ -48,6 +48,11 @@ export class HeaderComponent implements OnInit {
         navBar.style.display = "block";
       }
     }
+  }
+
+  goToPainel(){
+    console.log('executando')
+    // this.router.navigate(['painel']).then(r => r)
   }
 
   // close navBarMobile expanded aria
