@@ -1,0 +1,50 @@
+.img-form{
+  width: 10rem;
+  height: 8rem;
+  padding: 0;
+  margin: 1rem;
+}
+
+.input-fr{
+  width: 4rem;
+  height: 2rem;
+  text-align: center;
+}
+
+.text-main{
+}
+
+.text-center{
+  text-align: center;
+}
+
+.div-foot{
+  display: flex;
+}
+
+.inline{
+  display: inline-flex;
+}
+
+.btn-main{
+  padding:2px;
+  margin: auto;
+  margin-left: 4px;
+  margin-top: 0;
+  height: 2rem;
+  width: auto;
+}
+
+.div-rig{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.div-pad{
+  margin-top: 4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
