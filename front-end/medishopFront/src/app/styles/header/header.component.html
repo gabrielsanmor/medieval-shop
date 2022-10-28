@@ -1,0 +1,89 @@
+<section id="toolbar-desktop">
+    <div class="bg-blue d-flex justify-content-between align-items-center p-2 flex-wrap">
+      <span class="ms-5">Inscreva-se agora para ganhar desconto a cada compra realizada online
+      <button type="button" class="button-inscricao">Inscreva-se</button>
+      </span>
+      <div class="d-flex justify-content-end me-5">
+         <span class="me-5">
+        <i class="bi bi-clock-fill"></i>
+        Seg 08h - 23h Dom
+      </span>
+
+        <span>
+        <i class="bi bi-headset"></i>
+        +55 92 9 9334-2196
+      </span>
+      </div>
+    </div>
+
+<div class="d-flex justify-content-around p-2 shadow-sm">
+  <div class="mt-3">
+    <img src="assets/images/logo.png" alt="logo">
+  </div>
+      <button mat-button>HOME</button>
+      <button mat-button>SOBRE</button>
+        <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          CATEGORIAS
+          <i class="bi bi-caret-down-fill"></i></button>
+          <mat-menu #menu="matMenu">
+            
+            <button mat-menu-item *ngFor="let categoria of categorias">
+              <span>{{categoria.nome}}</span>
+            </button>
+          </mat-menu>
+      <button mat-button>SERVIÇOS</button>
+      <button mat-button>FALE CONOSCO</button>
+
+  <form>
+    <mat-form-field appearance="standard" class="mb-5">
+      <mat-label>Buscar</mat-label>
+      <input matInput placeholder="Buscar">
+      <button mat-icon-button matSuffix><mat-icon>search</mat-icon></button>
+    </mat-form-field>
+  </form>
+
+  <div class="demo-section mt-2">
+    <button mat-icon-button><mat-icon matBadge="0">shopping_cart</mat-icon></button>
+  </div>
+</div>
+</section>
+
+<section id="toolbar-mobile">
+  <div class="d-flex justify-content-between p-1 shadow-sm mt-2">
+    <div class="d-flex justify-content-start">
+      <button mat-icon-button [matMenuTriggerFor]="categorias"><mat-icon class="menu">dehaze</mat-icon></button>
+      <mat-menu #categorias="matMenu">
+        <button mat-menu-item>HOME</button>
+        <button mat-menu-item>SOBRE</button>
+        <button mat-menu-item [matMenuTriggerFor]="menu">CATEGORIAS </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <span>Beleza</span>
+          </button>
+          <button mat-menu-item>
+            <span>Cuidados Diários</span>
+          </button>
+          <button mat-menu-item>
+            <span>Dermocosméticos</span>
+          </button>
+          <button mat-menu-item>
+            <span>Medicamentos</span>
+          </button>
+          <button mat-menu-item>
+            <span>Saúde</span>
+          </button>
+        </mat-menu>
+        <button mat-menu-item>SERVIÇOS</button>
+        <button mat-menu-item>FALE CONOSCO</button>
+      </mat-menu>
+      <div class="mt-2">
+        <img src="assets/images/logo.png" alt="logo">
+      </div>
+    </div>
+    <button mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+      <span class="position-absolute mt-2 translate-middle badge rounded-pill bg-info">0
+  </span>
+    </button>
+  </div>
+</section>

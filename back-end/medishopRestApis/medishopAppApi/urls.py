@@ -9,6 +9,6 @@ urlpatterns = [
     path('api/user/<int:id>',UserDetalheView.as_view()),
     path('api/user',UserDetalheView.as_view()),
     path('api/cart',CarrinhoListView.as_view()),
-    path('api/adduser',UserCriaView.as_view()),
-    path('api/additem',CartAddView.as_view())
+    path('api/cart/<int:id>',CarrinhoListView.as_view()),
+    path('api/user/add',UserCriaView.as_view()),
 ]

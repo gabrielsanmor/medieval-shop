@@ -3,8 +3,15 @@ from pickle import TRUE
 from rest_framework import serializers
 from .models import *
 
+
+class CategoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = ('id','nome')
+
 class ItemSerializer(serializers.ModelSerializer):
     imagem_url = serializers.SerializerMethodField()
+    categoria = CategoriaSerializer()
 
     def get_imagem_url(self,item):
         request = self.context.get('request')
@@ -15,10 +22,6 @@ class ItemSerializer(serializers.ModelSerializer):
         model = Item
         fields = ('id','nome','descricao','preco','quantidade','imagem_url','categoria')
 
-class CategoriaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = ('id','nome')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,7 +37,7 @@ class CartItemSerializer(serializers.ModelSerializer):
     item = ItemSerializer()
     class Meta:
         model = CartItem
-        fields = ('id','item','quantidade')
+        fields = ('id','item','quantidade','cart')
 
 class CartSerializer(serializers.ModelSerializer):
     itens_cart = CartItemSerializer(many=True)
